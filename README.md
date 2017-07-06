@@ -3,12 +3,25 @@ audit-jenkins
 
 Audits and generates a report on the health and staleness of Jenkins jobs
 
-For instance:
+### Running an audit:
+
+Example output:
 
 ```
 $ audit-jenkins -url http://jenkins:8080/
 ```
 
-> Requires Golang to build - `go install`
+* No view specified
+* Jobs never run
+* Jobs never passed
+* Stale jobs (not run in 7 days)
 
-# audit-jenkins
+### Save / back-up jobs to disk
+
+```
+$ audit-jenkins -url http://jenkins:8080/ -saveJobs=true
+```
+
+### Requirements
+
+> Requires Golang to build - `go get` / `go install`
